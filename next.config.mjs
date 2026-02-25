@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  /* config options here */
-  reactCompiler: true,
-};
+  experimental: {
+    appDir: true,
+  },
+  images: {
+    domains: ['images.unsplash.com', 'thumbs.dreamstime.com', 'www.shutterstock.com', 'foyr.com', 'lirp.cdn-website.com', 'www.decorilla.com', 'media.istockphoto.com', 'retratosbarcelona.com'],
+  },
+}
 
 export default nextConfig;
