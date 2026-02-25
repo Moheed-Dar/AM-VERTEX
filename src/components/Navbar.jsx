@@ -229,7 +229,7 @@ export default function Navbar() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="w-6 h-6" />
+                    <Menu className="w-6 h6" />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -298,26 +298,36 @@ export default function Navbar() {
                   transition={{ delay: 0.4 }}
                   className="space-y-4 pt-6 border-t border-gray-200 dark:border-dark-700"
                 >
-                  {/* Theme Toggle */}
-                  <button
-                    onClick={toggleTheme}
-                    className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-800 transition-all"
-                  >
-                    <span className="font-medium">Theme</span>
-                    <div className="flex items-center gap-2">
-                      {theme === 'dark' ? (
-                        <>
-                          <Sun className="w-5 h-5 text-amber-400" />
-                          <span className="text-sm">Light</span>
-                        </>
-                      ) : (
-                        <>
-                          <Moon className="w-5 h-5 text-purple-500" />
-                          <span className="text-sm">Dark</span>
-                        </>
-                      )}
-                    </div>
-                  </button>
+                  {/* Theme Toggle with Pills */}
+                  <div className="flex items-center justify-between w-full px-4 py-3">
+                    <span className="font-medium text-gray-700 dark:text-gray-300">Theme</span>
+                    <button
+                      onClick={toggleTheme}
+                      className="relative flex items-center gap-1 p-1 rounded-full bg-gray-200 dark:bg-dark-700 transition-colors"
+                    >
+                      {/* Light Pill */}
+                      <div
+                        className={`relative z-10 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${theme === 'light'
+                            ? 'bg-white text-primary-600 shadow-sm'
+                            : 'text-gray-500 hover:text-gray-700'
+                          }`}
+                      >
+                        <Sun className="w-3.5 h-3.5" />
+                        <span>Light</span>
+                      </div>
+
+                      {/* Dark Pill */}
+                      <div
+                        className={`relative z-10 flex items-center justify-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 ${theme === 'dark'
+                            ? 'bg-dark-800 text-primary-400 shadow-sm'
+                            : 'text-gray-500 hover:text-gray-700'
+                          }`}
+                      >
+                        <Moon className="w-3.5 h-3.5" />
+                        <span>Dark</span>
+                      </div>
+                    </button>
+                  </div>
 
                   {/* CTA Button */}
                   <Link

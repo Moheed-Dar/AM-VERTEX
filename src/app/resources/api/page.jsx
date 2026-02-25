@@ -8,16 +8,16 @@ import { useState } from 'react';
 export default function APIPage() {
   const [copied, setCopied] = useState(false);
 
-  const codeExample = `curl -X GET "https://api.example.com/v1/users" \\
+  const codeExample = `curl -X GET "https://api.example.com/v1/users " \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json"`;
 
   const endpoints = [
-    { method: 'GET', path: '/users', desc: 'List all users' },
-    { method: 'POST', path: '/users', desc: 'Create a new user' },
-    { method: 'GET', path: '/users/:id', desc: 'Get user by ID' },
-    { method: 'PUT', path: '/users/:id', desc: 'Update user' },
-    { method: 'DELETE', path: '/users/:id', desc: 'Delete user' }
+    { id: 1, method: 'GET', path: '/users', desc: 'List all users' },
+    { id: 2, method: 'POST', path: '/users', desc: 'Create a new user' },
+    { id: 3, method: 'GET', path: '/users/:id', desc: 'Get user by ID' },
+    { id: 4, method: 'PUT', path: '/users/:id', desc: 'Update user' },
+    { id: 5, method: 'DELETE', path: '/users/:id', desc: 'Delete user' }
   ];
 
   const copyCode = () => {
@@ -96,7 +96,7 @@ export default function APIPage() {
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Endpoints</h2>
           {endpoints.map((endpoint, index) => (
             <motion.div
-              key={endpoint.path}
+              key={endpoint.id}  // Fixed: Using unique id instead of path
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + index * 0.1 }}

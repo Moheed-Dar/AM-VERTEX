@@ -74,7 +74,7 @@ export default function Footer() {
           <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px]" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/20 rounded-full blur-[80px]" />
 
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="relative flex flex-col items-center text-center md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
             <div className="text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-white text-xs font-medium mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
@@ -86,14 +86,15 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="w-full md:w-auto flex gap-3">
+            {/* Mobile: Stack vertically, Desktop: Side by side */}
+            <div className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 md:w-64 px-5 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-slate-400 text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all backdrop-blur-sm"
               />
-              <button className="px-6 py-3.5 bg-white text-slate-900 rounded-xl font-semibold hover:shadow-lg hover:shadow-white/20 hover:scale-105 transition-all flex items-center gap-2 group whitespace-nowrap">
-                <span className="hidden sm:inline">Subscribe</span>
+              <button className="w-full sm:w-auto px-6 py-3.5 bg-white text-slate-900 rounded-xl font-semibold hover:shadow-lg hover:shadow-white/20 hover:scale-105 transition-all flex items-center justify-center gap-2 group whitespace-nowrap">
+                <span>Subscribe</span>
                 <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>

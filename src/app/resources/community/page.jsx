@@ -23,7 +23,7 @@ const communityResources = [
     title: 'Discord Community',
     description: 'Join 10,000+ members in our active Discord server. Get help, share projects, and connect with fellow developers.',
     icon: MessageCircle,
-    link: 'https://discord.gg/yourcommunity  ',
+    link: 'https://discord.gg/yourcommunity   ',
     members: '10k+',
     color: 'bg-indigo-500',
   },
@@ -32,7 +32,7 @@ const communityResources = [
     title: 'GitHub Discussions',
     description: 'Technical discussions, feature requests, and community-driven solutions.',
     icon: Github,
-    link: 'https://github.com/yourorg/discussions  ',
+    link: 'https://github.com/yourorg/discussions   ',
     members: '5k+',
     color: 'bg-gray-800 dark:bg-gray-700',
   },
@@ -41,7 +41,7 @@ const communityResources = [
     title: 'Twitter/X Community',
     description: 'Stay updated with the latest news, tips, and community highlights.',
     icon: Twitter,
-    link: 'https://twitter.com/yourhandle  ',
+    link: 'https://twitter.com/yourhandle   ',
     members: '25k+',
     color: 'bg-sky-500',
   },
@@ -234,13 +234,14 @@ export default function CommunityPage() {
           <p className="text-gray-400 dark:text-gray-500 mb-8 max-w-xl mx-auto transition-colors duration-300">
             Subscribe to our newsletter for weekly community updates, featured projects, and upcoming events.
           </p>
-          <div className="flex max-w-md mx-auto gap-2">
+          {/* Mobile: Stack vertically, Desktop: Side by side */}
+          <div className="flex flex-col sm:flex-row max-w-md mx-auto gap-2">
             <input
               type="email"
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg bg-gray-800 dark:bg-gray-950 border border-gray-700 dark:border-gray-800 text-white placeholder-gray-500 dark:placeholder-gray-600 focus:outline-none focus:border-blue-500 transition-colors duration-300"
             />
-            <button className="px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+            <button className="w-full sm:w-auto px-6 py-3 bg-blue-600 rounded-lg font-medium hover:bg-blue-700 transition-colors whitespace-nowrap">
               Subscribe
             </button>
           </div>
