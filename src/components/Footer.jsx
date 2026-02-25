@@ -7,7 +7,7 @@ import {
   Twitter,
   Instagram,
   Github,
-  ArrowUpRight,
+  ArrowUp,
   Sparkles,
   MapPin,
   Mail,
@@ -201,7 +201,7 @@ export default function Footer() {
                             <span className="block group-hover:-translate-y-full transition-transform duration-300">{link.name}</span>
                             <span className="absolute top-full left-0 block group-hover:-translate-y-full transition-transform duration-300 text-blue-600 dark:text-blue-400">{link.name}</span>
                           </span>
-                          <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                          <ArrowUp className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-all duration-300 rotate-45" />
                         </Link>
                       </motion.li>
                     ))}
@@ -252,17 +252,17 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Back to Top Button */}
+      {/* Back to Top Button - Clean Circular Button */}
       <motion.button
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
-        whileHover={{ scale: 1.15, y: -2 }}
+        whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-2xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all z-50 group"
+        className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-blue-600 text-white shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all z-50 flex items-center justify-center"
       >
-        <ArrowUpRight className="w-5 h-5 rotate-[-45deg] group-hover:rotate-0 transition-transform duration-300" />
+        <ArrowUp className="w-5 h-5" />
       </motion.button>
     </footer>
   );
